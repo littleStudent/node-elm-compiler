@@ -132,8 +132,7 @@ function compileToString(sources, options) {
       if (err) {
         return reject(err);
       }
-      console.log(fs.existsSync('/home/nowuser/src/src/elm/Main.elm'));
-      options.output = '/home/nowuser/src/123' + options.output;
+      options.output = '/tmp/123' + options.output;
       options.processOpts = { stdio: 'pipe' };
       console.log(sources);
       console.log(options);
@@ -149,6 +148,9 @@ function compileToString(sources, options) {
       compiler.stderr.on('data', function(chunk) {
         output += chunk;
       });
+      compiler.on('message', function(a) {
+        console.log('message: ', a);
+      })
       console.log('AAAA');
       console.log(output);
       compiler.on('close', function(exitCode) {
