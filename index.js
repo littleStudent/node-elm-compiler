@@ -122,7 +122,8 @@ function compileToString(sources, options){
 
       options.output = './tmp/';
       options.processOpts = { stdio: 'pipe' }
-
+      console.log(sources)
+      console.log(options)
       var compiler = compile(sources, options);
 
       compiler.stdout.setEncoding("utf8");
