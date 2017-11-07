@@ -19,7 +19,7 @@ var defaultOptions     = {
   report:     undefined,
   warn:       undefined,
   debug:      undefined,
-  verbose:    false,
+  verbose:    true,
   processOpts: undefined,
 };
 
@@ -120,7 +120,7 @@ function compileToString(sources, options){
         return reject(err);
       }
 
-      options.output = './dist/' + options.output;
+      options.output = './dist/123' + options.output;
       options.processOpts = { stdio: 'pipe' }
       console.log(sources)
       console.log(options)
