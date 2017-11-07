@@ -64,7 +64,8 @@ function runCompiler(sources, options, pathToMake) {
   var processOpts = prepareProcessOpts(options);
 
   console.log(['Running', pathToMake].concat(processArgs || []).join(' '));
-
+  console.log(processArgs)
+  console.log(processOpts)
   return options.spawn(pathToMake, processArgs, processOpts);
 }
 
