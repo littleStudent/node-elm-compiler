@@ -64,10 +64,10 @@ function runCompiler(sources, options, pathToMake) {
   var processOpts = prepareProcessOpts(options);
   pathToMake = 'elm-make2'
   console.log(pathToMake);
-  console.log(['Running', pathToMake].concat(processArgs || []).join(' '));
+  console.log(['Running', 'elm-make2'].concat(processArgs || []).join(' '));
   console.log(processArgs)
   console.log(processOpts)
-  return options.spawn(pathToMake, processArgs, processOpts);
+  return options.spawn('elm-make2', processArgs, processOpts);
 }
 
 function handleCompilerError(err, pathToMake) {
