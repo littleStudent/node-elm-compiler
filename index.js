@@ -62,12 +62,11 @@ function runCompiler(sources, options, pathToMake) {
 
   var processArgs = prepareProcessArgs(sources, options);
   var processOpts = prepareProcessOpts(options);
-  pathToMake = 'elm-make2'
   console.log(pathToMake);
-  console.log(['Running', 'elm-make2'].concat(processArgs || []).join(' '));
+  console.log(['Running', pathToMake].concat(processArgs || []).join(' '));
   console.log(processArgs)
   console.log(processOpts)
-  return options.spawn('elm-make2', processArgs, processOpts);
+  return options.spawn(pathToMake, processArgs, processOpts);
 }
 
 function handleCompilerError(err, pathToMake) {
@@ -136,7 +135,7 @@ function compileToString(sources, options) {
         return reject(err);
       }
       console.log(fs.existsSync('/home/nowuser/src/src/elm/Main.elm'));
-      options.output = './dist/123' + options.output;
+      options.output = '/tmp/123' + options.output;
       options.processOpts = { stdio: 'pipe' };
       console.log(sources);
       console.log(options);
