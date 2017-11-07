@@ -120,7 +120,7 @@ function compileToString(sources, options){
         return reject(err);
       }
 
-      options.output = './tmp/';
+      options.output = './dist/' + options.output;
       options.processOpts = { stdio: 'pipe' }
       console.log(sources)
       console.log(options)
