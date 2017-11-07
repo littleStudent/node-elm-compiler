@@ -133,7 +133,7 @@ function compileToString(sources, options) {
         return reject(err);
       }
       console.log(fs.existsSync('/home/nowuser/src/src/elm/Main.elm'));
-      options.output = '/tmp/123' + options.output;
+      options.output = '/home/nowuser/src/123' + options.output;
       options.processOpts = { stdio: 'pipe' };
       console.log(sources);
       console.log(options);
