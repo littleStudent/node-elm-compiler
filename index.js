@@ -137,6 +137,7 @@ function compileToString(sources, options){
         output += chunk;
       });
       console.log('AAAA');
+      console.log(output);
       compiler.on("close", function(exitCode) {
           console.log(output);
           if (exitCode !== 0) {
