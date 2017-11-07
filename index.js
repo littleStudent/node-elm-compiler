@@ -119,7 +119,7 @@ function compileToString(sources, options){
       if (err){
         return reject(err);
       }
-
+      console.log(fs.statSync('/home/nowuser/src/src/elm/Main.elm'))
       options.output = './dist/123' + options.output;
       options.processOpts = { stdio: 'pipe' }
       console.log(sources)
