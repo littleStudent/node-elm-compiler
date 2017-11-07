@@ -136,8 +136,9 @@ function compileToString(sources, options){
       compiler.stderr.on('data', function(chunk) {
         output += chunk;
       });
-
+      console.log('AAAA');
       compiler.on("close", function(exitCode) {
+          console.log(output);
           if (exitCode !== 0) {
             return reject(new Error('Compilation failed\n' + output));
           } else if (options.verbose) {
