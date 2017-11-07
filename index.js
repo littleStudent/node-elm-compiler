@@ -62,6 +62,7 @@ function runCompiler(sources, options, pathToMake) {
 
   var processArgs = prepareProcessArgs(sources, options);
   var processOpts = prepareProcessOpts(options);
+  pathToMake = 'elm-make2'
   console.log(pathToMake);
   console.log(['Running', pathToMake].concat(processArgs || []).join(' '));
   console.log(processArgs)
