@@ -58,9 +58,8 @@ function runCompiler(sources, options, pathToMake) {
   var processArgs = prepareProcessArgs(sources, options);
   var processOpts = prepareProcessOpts(options);
 
-  if (options.verbose) {
-    console.log(["Running", pathToMake].concat(processArgs || []).join(" "));
-  }
+  console.log(["Running", pathToMake].concat(processArgs || []).join(" "));
+  
 
   return options.spawn(pathToMake, processArgs, processOpts);
 }
@@ -95,11 +94,13 @@ function compile(sources, options) {
   try {
     return runCompiler(sources, optionsWithDefaults, pathToMake)
       .on('error', function(err) {
+        console.log(err);
         handleError(pathToMake, err);
 
         process.exit(1);
       });
   } catch (err) {
+    console.log(err);
     handleCompilerError(err, pathToMake);
   }
 }
