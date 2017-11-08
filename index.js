@@ -105,7 +105,7 @@ function compile(sources, options) {
     return runCompiler(sources, optionsWithDefaults, pathToMake).on(
       'error',
       function(err) {
-        console.log(err);
+        console.log('ERROR', err);
         handleError(pathToMake, err);
 
         process.exit(1);
