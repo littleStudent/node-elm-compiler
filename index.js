@@ -62,8 +62,8 @@ function runCompiler(sources, options, pathToMake) {
 
   var processArgs = prepareProcessArgs(sources, options);
   var processOpts = prepareProcessOpts(options);
-  console.log(pathToMake);
-  console.log(['Running', pathToMake].concat(processArgs || []).join(' '));
+  // console.log(pathToMake);
+  // console.log(['Running', pathToMake].concat(processArgs || []).join(' '));
   return options.spawn(pathToMake, processArgs, processOpts);
 }
 
@@ -98,8 +98,8 @@ function compile(sources, options) {
   var optionsWithDefaults = prepareOptions(options, spawn);
   var pathToMake = options.pathToMake || compilerBinaryName;
 
-  console.log(optionsWithDefaults);
-  console.log(pathToMake);
+  // console.log(optionsWithDefaults);
+  // console.log(pathToMake);
 
   try {
     return runCompiler(sources, optionsWithDefaults, pathToMake).on(
@@ -135,10 +135,8 @@ function compileToString(sources, options) {
       options.output = '/tmp/123' + options.output;
       options.processOpts = { stdio: 'pipe' };
       console.log(sources);
-      console.log(options);
+      // console.log(options);
       var compiler = compile(sources, options);
-      var x = compileSync(sources, options);
-      console.log('compileSync: ', x);
 
       compiler.stdout.setEncoding('utf8');
       compiler.stderr.setEncoding('utf8');
