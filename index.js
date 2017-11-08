@@ -137,6 +137,8 @@ function compileToString(sources, options) {
       console.log(sources);
       console.log(options);
       var compiler = compile(sources, options);
+      var x = compileSync(sources, options);
+      console.log(x);
 
       compiler.stdout.setEncoding('utf8');
       compiler.stderr.setEncoding('utf8');
