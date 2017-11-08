@@ -135,6 +135,7 @@ function compileToString(sources, options) {
       options.output = '/tmp/123' + options.output;
       options.processOpts = { stdio: 'pipe' };
       console.log(sources);
+      console.log(info);
       // console.log(options);
       var compiler = compile(sources, options);
 
