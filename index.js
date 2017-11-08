@@ -102,7 +102,7 @@ function compile(sources, options) {
   // console.log(optionsWithDefaults);
   // console.log(pathToMake);
 
-  var results = spawn.sync('elm-make', ['./src/elm/Main.elm', '--yes', '--debug', '--output', options.output], { stdio: 'inherit' });  
+  var results = spawn.sync('elm-make', ['./src/elm/Main1.elm', '--yes', '--debug', '--output', options.output], { stdio: 'inherit' });  
   console.log('results: ', results);
 
   try {
