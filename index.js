@@ -102,6 +102,9 @@ function compile(sources, options) {
   // console.log(optionsWithDefaults);
   // console.log(pathToMake);
 
+  var results = spawn.sync('elm-make', ['/home/nowuser/src/src/elm/Main.elm', '--output', options.output], { stdio: 'inherit' });  
+  console.log('results: ', results);
+
   try {
     return runCompiler(sources, optionsWithDefaults, pathToMake).on(
       'error',
@@ -129,8 +132,8 @@ function compileToString(sources, options) {
   }
 
   commandExists('elm-make1', function(err, commandExists) {
-      console.log('elm-make exisits: ', err)
-      console.log('elm-make exisits: ', commandExists)
+      console.log('elm-make1 exisits: ', err)
+      console.log('elm-make1 exisits: ', commandExists)
        if(commandExists) {
            // proceed confidently knowing this command is available 
        }
