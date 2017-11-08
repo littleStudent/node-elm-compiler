@@ -6,6 +6,7 @@ var compilerBinaryName = 'elm-make';
 var fs = require('fs');
 var path = require('path');
 var temp = require('temp').track();
+var commandExists = require('command-exists');
 var findAllDependencies = require('find-elm-dependencies').findAllDependencies;
 
 var defaultOptions = {
@@ -63,7 +64,6 @@ function runCompiler(sources, options, pathToMake) {
   var processArgs = prepareProcessArgs(sources, options);
   var processOpts = prepareProcessOpts(options);
   console.log('processArgs: ', processArgs);
-  console.log('processOpts: ', processOpts);
   console.log(['Running', pathToMake].concat(processArgs || []).join(' '));
   return options.spawn(pathToMake, processArgs, processOpts);
 }
@@ -127,6 +127,15 @@ function compileToString(sources, options) {
   if (typeof options.output === 'undefined') {
     options.output = '.js';
   }
+
+  commandExists('ls', function(err, commandExists) {
+      console.log('commandExists: ', err)
+      console.log('commandExists: ', commandExists)
+       if(commandExists) {
+           // proceed confidently knowing this command is available 
+       }
+    
+   });
 
   return new Promise(function(resolve, reject) {
     temp.open({ suffix: options.output }, function(err, info) {

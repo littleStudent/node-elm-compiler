@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/rtfeldman/node-elm-compiler",
   "dependencies": {
+    "command-exists": "^1.2.2",
     "cross-spawn": "4.0.0",
     "find-elm-dependencies": "1.0.2",
     "lodash": "4.14.2",
