@@ -170,6 +170,7 @@ function compileToString(sources, options) {
 }
 
 function handleError(pathToMake, err) {
+  console.log(err)
   if (err.code === 'ENOENT') {
     console.error(
       'Could not find Elm compiler "' + pathToMake + '". Is it installed?',
