@@ -132,10 +132,9 @@ function compileToString(sources, options) {
       if (err) {
         return reject(err);
       }
-      options.output = '/tmp/123' + options.output;
+      options.output = info.path;
       options.processOpts = { stdio: 'pipe' };
       console.log(sources);
-      console.log(info);
       // console.log(options);
       var compiler = compile(sources, options);
 
