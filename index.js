@@ -128,7 +128,7 @@ function compileToString(sources, options) {
     options.output = '.js';
   }
 
-  commandExists('ls', function(err, commandExists) {
+  commandExists('elm-make', function(err, commandExists) {
       console.log('commandExists: ', err)
       console.log('commandExists: ', commandExists)
        if(commandExists) {
