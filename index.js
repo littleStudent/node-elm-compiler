@@ -129,8 +129,8 @@ function compileToString(sources, options) {
   }
 
   commandExists('elm-make', function(err, commandExists) {
-      console.log('commandExists: ', err)
-      console.log('commandExists: ', commandExists)
+      console.log('elm-make exisits: ', err)
+      console.log('elm-make exisits: ', commandExists)
        if(commandExists) {
            // proceed confidently knowing this command is available 
        }
