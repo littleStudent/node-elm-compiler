@@ -152,11 +152,11 @@ function compileToString(sources, options) {
       });
       compiler.on('message', function(a) {
         console.log('message: ', a);
-      })
-      console.log('AAAA');
-      console.log(output);
+      });
+      // console.log('AAAA');
+      // console.log(output);
       compiler.on('close', function(exitCode) {
-        console.log(output);
+        console.log('close:', output);
         if (exitCode !== 0) {
           return reject(new Error('Compilation failed\n' + output));
         } else if (options.verbose) {
